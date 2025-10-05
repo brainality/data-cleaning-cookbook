@@ -1,13 +1,13 @@
 # 🧹 Data Cleaning Cookbook
 
-A lightweight, practical collection of reusable Python snippets and Jupyter notebooks for common **data cleaning tasks** — from quick column fixes to splitting datasets and handling missing values.
+A lightweight, practical collection of reusable Python snippets and Jupyter notebooks for common **data cleaning tasks** - from quick column fixes to splitting datasets and handling missing values.
 
 ---
 
 ## 🧠 Purpose
 
 This project is meant to be a **reference and toolkit** for everyday data wrangling.
-Each script or notebook demonstrates a focused cleaning pattern — minimal, well-documented, and easy to adapt.
+Each script or notebook demonstrates a focused cleaning pattern - minimal, well-documented, and easy to adapt.
 
 ---
 
