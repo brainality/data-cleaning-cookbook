@@ -1,0 +1,52 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  lint:
+    name: Lint (flake8)
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install flake8
+
+      - name: Lint src and examples
+        run: |
+          # Lint core code
+          if [ -d src ]; then flake8 src; fi
+          # Lint example scripts (your split_example.py lives here)
+          if [ -d examples ]; then flake8 examples; fi
+          # Lint tests if you add them later
+          if [ -d tests ]; then flake8 tests; fi
+
+  # Enable when you add tests:
+  # tests:
+  #   name: Tests (pytest)
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-python@v5
+  #       with:
+  #         python-version: "3.11"
+  #     - name: Install deps
+  #       run: |
+  #         python -m pip install --upgrade pip
+  #         pip install -r requirements.txt
+  #         pip install pytest
+  #     - name: Run tests
+  #       run: pytest -q
