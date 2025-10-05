@@ -1,11 +1,11 @@
 import pandas as pd
 import logging
 
+
 def split_dataset_by_columns(csv_path, input_columns):
 
-
     """
-    Split a dataset into multiple CSV files based on which of the 
+    Split a dataset into multiple CSV files based on which of the
     given columns is filled.
     Example: split_dataset_by_columns("data.csv", ["sex", "age"])
     """
