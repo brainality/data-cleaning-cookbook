@@ -1,4 +1,4 @@
-# Data-tools
+# Data tools
 
 Minimal, reusable utilities for data cleaning and quick transformations.
 
